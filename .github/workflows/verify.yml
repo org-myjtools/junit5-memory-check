@@ -30,4 +30,4 @@ jobs:
         if: github.actor != 'dependabot[bot]'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B sonar:sonar -Dsonar.projectKey=org-myjtools_project-id -Dsonar.organization=org-myjtools -Dsonar.host.url=https://sonarcloud.io
+        run: mvn -B sonar:sonar -Dsonar.projectKey=org-myjtools_junit5-memory-check -Dsonar.organization=org-myjtools -Dsonar.host.url=https://sonarcloud.io
