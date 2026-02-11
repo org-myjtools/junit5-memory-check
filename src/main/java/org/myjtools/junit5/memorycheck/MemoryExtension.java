@@ -31,14 +31,17 @@ public class MemoryExtension implements BeforeTestExecutionCallback, AfterTestEx
 		long after = used(runtime);
 		long used = Math.max(0,after - before);
 
+		String formatted = format(used);
+		System.out.println("[memory-check] " + context.getDisplayName() + ": " + formatted);
+		context.publishReportEntry("memoryUsed", formatted);
+
 		if (used > maxBytes) {
 			throw new AssertionError(
 					"Memory exceeded: " + used + " > " + format(maxBytes) + " (" + format(used - maxBytes) + " bytes over limit)"
 			);
 		}
 
-		System.out.println("------------------------------------");
-		System.out.println("Memory used in test: " + format(used));
+
 
 	}
 
