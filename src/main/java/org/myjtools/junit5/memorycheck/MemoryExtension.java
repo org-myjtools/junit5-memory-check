@@ -37,7 +37,7 @@ public class MemoryExtension implements BeforeTestExecutionCallback, AfterTestEx
 
 		if (used > maxBytes) {
 			throw new AssertionError(
-					"Memory exceeded: " + used + " > " + format(maxBytes) + " (" + format(used - maxBytes) + " bytes over limit)"
+					"Memory exceeded: " + format(used) + " > " + format(maxBytes) + " (" + format(used - maxBytes) + " bytes over limit)"
 			);
 		}
 
